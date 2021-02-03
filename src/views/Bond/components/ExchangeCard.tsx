@@ -147,6 +147,9 @@ const StyledToken = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 const StyledCardActions = styled.div`

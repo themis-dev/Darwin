@@ -51,7 +51,7 @@ const Banks: React.FC = ({ children }) => {
       // })
       
     }
-    // console.log(banks)
+    console.log(banks)
     banks.sort((a, b) => (a.sort > b.sort ? 1 : -1));
     setBanks(banks);
   }, [basisCash, basisCash?.isUnlocked, setBanks]);

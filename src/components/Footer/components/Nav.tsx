@@ -8,11 +8,11 @@ const Nav: React.FC = () => {
       <StyledLink href= {buyBAC} target="_blank">Get BXC</StyledLink>
       <StyledLink href="https://docs.basisx.io" target="_blank">Docs</StyledLink>
       <StyledLink href="https://github.com/basisx-io/contracts/blob/main/README.md" target="_blank">GitHub</StyledLink>
-      <StyledLink href="https://twitter.com/x_basis" target="_blank">Twitter</StyledLink>
+      <StyledLink href="https://twitter.com/darwinx_io" target="_blank">Twitter</StyledLink>
       <StyledLink href="https://t.me/BasisxOfficial" target="_blank">Telegram</StyledLink>
       {/* <StyledLink href="https://discord.gg/UEZq3HF5Eu" target="_blank">Discord</StyledLink> */}
-      <StyledLink href="https://basisx.medium.com/" target="_blank">Medium</StyledLink>
-      <StyledLink href="https://github.com/basisx-io/contracts/blob/main/REP-BasisX-16_01_2021.pdf" target="_blank">Audit</StyledLink>
+      <StyledLink href="https://medium.com/@darwinx_io" target="_blank">Medium</StyledLink>
+      {/* <StyledLink href="https://github.com/basisx-io/contracts/blob/main/REP-BasisX-16_01_2021.pdf" target="_blank">Audit</StyledLink> */}
     </StyledNav>
   )
 }

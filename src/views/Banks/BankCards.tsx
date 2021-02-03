@@ -100,7 +100,7 @@ const BankCard: React.FC<BankCardProps> = ({ bank, cash, share }) => {
   return (
     <StyledCardWrapper>
       {bank.depositTokenName.includes('LP') &&
-        (bank.depositTokenName.includes('BXC_USDT(HECO)-LP') ? (
+        (bank.depositTokenName.includes('BXC_USDT-LP') ? (
           <StyledCardSuperAccent />
         ) : (
           <StyledCardAccent />
@@ -126,7 +126,7 @@ const BankCard: React.FC<BankCardProps> = ({ bank, cash, share }) => {
                 <StyledTotalItem>
                   <StyledAPY>APY</StyledAPY>
                   {
-                    bank.depositTokenName.toUpperCase() === 'BXC_USDT(HECO)-LP' ||  bank.depositTokenName.toUpperCase() === 'BXS_USDT(HECO)-LP' ?
+                    bank.depositTokenName.toUpperCase() === 'BXC_USDT-LP' ||  bank.depositTokenName.toUpperCase() === 'BXS_USDT-LP' ?
                     <StyledAPY>{share ? (bank.totalNum?.apy * share?.priceInDAI).toFixed(2) + '%': '— %'}</StyledAPY> :
                     <StyledAPY>{cash ? (bank.totalNum?.apy * cash?.priceInDAI).toFixed(2) + '%': '— %'}</StyledAPY>
                   }
@@ -261,7 +261,7 @@ const StyledTitle = styled.h4`
   margin: ${(props) => props.theme.spacing[2]}px 0 0;
   padding: 0;
   @media (min-width: 768px) {
-    min-height: 125px;
+    min-height: 65px;
     display: flex;
     align-items: center;
   }

@@ -3996,7 +3996,7 @@
       }
     ]
   },
-  "USDT(HECO)CashPool": {
+  "USDTCashPool": {
     "address": "0x150f1F1a0406d0d589d03e28032B1BDA823cda39",
     "abi": [
       {

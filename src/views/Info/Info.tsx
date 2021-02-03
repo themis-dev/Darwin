@@ -206,7 +206,7 @@ const Info: React.FC = () => {
                                 <StyledOtherMsgSection>
                                     <StyledInfoBoxP>Yield (D/Y)*:</StyledInfoBoxP>
                                     {
-                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT(HECO)-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT(HECO)-LP' ?
+                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT-LP' ?
                                         <StyledInfoBoxNum>{share ? (v.apy * Number(share?.priceInDAI) /365).toFixed(2) +'%/' + (v.apy * Number(share?.priceInDAI)).toFixed(2) + '%': '— %'}</StyledInfoBoxNum> :
                                         <StyledInfoBoxNum>{cash ? (v.apy * Number(share?.priceInDAI) /365).toFixed(2) +'%/' + (v.apy * Number(cash?.priceInDAI)).toFixed(2) + '%': '— %'}</StyledInfoBoxNum>
                                     }
@@ -215,7 +215,7 @@ const Info: React.FC = () => {
                                 <StyledOtherMsgSection>
                                     <StyledInfoBoxP>Rewards Remaining:</StyledInfoBoxP>
                                     {
-                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT(HECO)-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT(HECO)-LP' ?
+                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT-LP' ?
                                         <StyledInfoBoxNum>{v.remain} SUVS</StyledInfoBoxNum> :
                                         <StyledInfoBoxNum>{v.remain} SUVC</StyledInfoBoxNum>
                                     }

@@ -61,10 +61,10 @@ const LPTokenHelpText: React.FC<{ bank: BankEntity }> = ({ bank }) => {
   let pairName: string;
   let uniswapUrl: string;
   if (bank.depositTokenName.includes('SUVC')) {
-    pairName = 'SUVC-USDT(HECO) pair';
+    pairName = 'SUVC-USDT pair';
     uniswapUrl = 'https://ht.mdex.com/#/add/0x15F4c382926F8A083bC924AbD3aa84Ce3982CAa9/0xa71EdC38d189767582C38A3145b5873052c3e47a';
   } else {
-    pairName = 'SUVS-USDT(HECO) pair';
+    pairName = 'SUVS-USDT pair';
     uniswapUrl = 'https://ht.mdex.com/#/add/0xbe0e001A5553f4421DC250A20bBdAb0e735495e3/0xa71EdC38d189767582C38A3145b5873052c3e47a';
   }
   return (

@@ -26,12 +26,12 @@ const logosBySymbol: {[title: string]: string} = {
   'HPT': HPTLogo,
   'HT': HTLogo,
   'SUSD': sUSDLogo,
-  'USDT(HECO)': USDTLogo,
+  'USDT': USDTLogo,
   'HBTC': HBTCLogo,
   'HDOT': DOTLogo,
   'HETH': ETHLogo,
-  'SUVC_USDT(HECO)-LP': bacLogo,
-  'SUVS_USDT(HECO)-LP': basLogo,
+  'SUVC_USDT-LP': bacLogo,
+  'SUVS_USDT-LP': basLogo,
   'SUVS_BXC-LP': bacLogo1,
     'BTC': BTCLogo
 };

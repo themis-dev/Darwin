@@ -49,7 +49,7 @@ export class BasisCash {
     // console.log(this.contracts)
     // Uniswap V2 Pair
     this.bacDai = new Contract(
-      externalTokens['SUVC_USDT(HECO)-LP'][0],
+      externalTokens['SUVC_USDT-LP'][0],
       IUniswapV2PairABI,
       provider,
     );
@@ -340,7 +340,7 @@ export class BasisCash {
 
   async stakeShareToBoardroom(amount: string): Promise<TransactionResponse> {
     if (this.isOldBoardroomMember()) {
-      throw new Error("you're using old Boardroom. please withdraw and deposit the BAS again.");
+      throw new Error("you're using old Boardroom.");
     }
     const Boardroom = this.currentBoardroom();
     return await Boardroom.stake(decimalToBalance(amount));
