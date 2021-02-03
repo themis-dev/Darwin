@@ -261,7 +261,7 @@ const StyledTitle = styled.h4`
   margin: ${(props) => props.theme.spacing[2]}px 0 0;
   padding: 0;
   @media (min-width: 768px) {
-    min-height: 95px;
+    min-height: 125px;
     display: flex;
     align-items: center;
   }

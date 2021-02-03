@@ -32,6 +32,7 @@ const logosBySymbol: {[title: string]: string} = {
   'HETH': ETHLogo,
   'SUVC_USDT(HECO)-LP': bacLogo,
   'SUVS_USDT(HECO)-LP': basLogo,
+  'SUVS_BXC-LP': bacLogo1,
     'BTC': BTCLogo
 };
 

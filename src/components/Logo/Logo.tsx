@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import farmer from '../../assets/img/farmer.svg';
+import farmer from '../../assets/img/logo.png';
 
 const Logo: React.FC = () => {
   return (

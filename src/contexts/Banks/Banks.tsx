@@ -20,7 +20,7 @@ const Banks: React.FC = ({ children }) => {
     //   })
     const data = await instance.get(apiUrl+'/apy')
     for (const bankInfo of Object.values(bankDefinitions)) {
-      console.log(bankInfo)
+      // console.log(bankInfo)
       if (bankInfo.finished) {
         if (!basisCash.isUnlocked) continue;
 
@@ -51,7 +51,7 @@ const Banks: React.FC = ({ children }) => {
       // })
       
     }
-    console.log(banks)
+    // console.log(banks)
     banks.sort((a, b) => (a.sort > b.sort ? 1 : -1));
     setBanks(banks);
   }, [basisCash, basisCash?.isUnlocked, setBanks]);
