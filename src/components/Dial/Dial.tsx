@@ -20,7 +20,7 @@ const Dial: React.FC<DialProps> = ({ children, disabled, size = 236, value }) =>
           value={value}
           styles={buildStyles({
             strokeLinecap: 'round',
-            pathColor: !disabled ? '#D7325D' : color.grey[400],
+            pathColor: !disabled ? '#4e3d62' : color.grey[400],
             pathTransitionDuration: 1,
           })}
         />

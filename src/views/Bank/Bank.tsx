@@ -62,11 +62,15 @@ const LPTokenHelpText: React.FC<{ bank: BankEntity }> = ({ bank }) => {
   let uniswapUrl: string;
   if (bank.depositTokenName.includes('SUVC')) {
     pairName = 'SUVC-USDT pair';
-    uniswapUrl = 'https://ht.mdex.com/#/add/0x15F4c382926F8A083bC924AbD3aa84Ce3982CAa9/0xa71EdC38d189767582C38A3145b5873052c3e47a';
-  } else {
-    pairName = 'SUVS-USDT pair';
-    uniswapUrl = 'https://ht.mdex.com/#/add/0xbe0e001A5553f4421DC250A20bBdAb0e735495e3/0xa71EdC38d189767582C38A3145b5873052c3e47a';
+    uniswapUrl = 'https://ht.mdex.com/#/add/0xE26A6f565a0974f9210E659594C716f6B021909F/0xa71EdC38d189767582C38A3145b5873052c3e47a';
+  } else if(bank.depositTokenName.includes('BXC')) {
+    pairName = 'SUVS-BXC pair';
+    uniswapUrl = 'https://ht.mdex.com/#/add/0x53f6B18f5bDC47bF5c17285277A67453D41f6806/0x15F4c382926F8A083bC924AbD3aa84Ce3982CAa9';
   }
+  else {
+    pairName = 'SUVS-USDT pair';
+    uniswapUrl = 'https://ht.mdex.com/#/add/0x53f6B18f5bDC47bF5c17285277A67453D41f6806/0xa71EdC38d189767582C38A3145b5873052c3e47a';
+  } 
   return (
     <StyledLink href={uniswapUrl} target="_blank">
       {`Provide liquidity to ${pairName} on Mdex`}

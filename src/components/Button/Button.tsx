@@ -95,7 +95,7 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
-  background-color: #3e311f;
+  background-color: #6b4c7b;
   border: 0;
   border-radius: 12px;
   box-shadow: ${props => props.boxShadow};
@@ -112,8 +112,8 @@ const StyledButton = styled.button<StyledButtonProps>`
   pointer-events: ${props => !props.disabled ? undefined : 'none'};
   width: 100%;
   &:hover {
-    background-color: #eeb006;
-    color: #333;
+    background-color: #ff5e5e;
+    color: #3b2941;
   }
 `
 

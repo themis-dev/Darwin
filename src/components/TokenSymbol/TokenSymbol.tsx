@@ -3,6 +3,7 @@ import React from 'react';
 import bacLogo from '../../assets/img/basis-share-logo.png';
 import bacLogo1 from '../../assets/img/basis-share-logo1.png';
 import basLogo from '../../assets/img/basis-cash-logo.png';
+import basLogo1 from '../../assets/img/basis-cash-logo1.png';
 import babLogo from '../../assets/img/basis-bond-logo.png';
 import HPTLogo from '../../assets/img/HPT.png';
 import HTLogo from '../../assets/img/HT.png';
@@ -22,7 +23,7 @@ const logosBySymbol: {[title: string]: string} = {
   'BAS': basLogo,
   'BXC': bacLogo1,
   'BXB': babLogo,
-  'BXS': basLogo,
+  'BXS': basLogo1,
   'HPT': HPTLogo,
   'HT': HTLogo,
   'SUSD': sUSDLogo,

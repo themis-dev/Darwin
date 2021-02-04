@@ -44,16 +44,17 @@ const Info: React.FC = () => {
         setStats({ cash, bond, share });
     }, [basisCash, setStats]);
 
-    const [{ pool2, pool3, treasury, bxcUnstaked, boardroom, bxsUnstaked }, setPool] = useState<LpPoolData>({});
+    const [{ pool2, pool3, pool4, treasury, bxcUnstaked, boardroom, bxsUnstaked }, setPool] = useState<LpPoolData>({});
     const fetchLPPool = useCallback(async() => {
-        const data = await instance.get(apiUrl + '/bxc/num')
+        const data = await instance.get(apiUrl + '/num')
         const pool2 = data.data.data[0].balance
         const pool3 = data.data.data[1].balance
+        const pool4 = data.data.data[1].bxsSuvsBalance
         const treasury = data.data.data[0].treasury
         const bxcUnstaked = data.data.data[0].unstaked
         const boardroom = data.data.data[1].boardroom
         const bxsUnstaked = data.data.data[1].unstaked
-        setPool({ pool2, pool3, treasury, bxcUnstaked, boardroom, bxsUnstaked })
+        setPool({ pool2, pool3, pool4, treasury, bxcUnstaked, boardroom, bxsUnstaked })
     }, [setPool])
 
     const [arr, setApyTvl] = useState<Array<any>>([]);
@@ -67,11 +68,11 @@ const Info: React.FC = () => {
         if (basisCash) {
           fetchStats().catch((err) => console.error(err.stack));
           fetchLPPool()
-          fetchApyTvl()
+        //   fetchApyTvl()
           const refreshInterval = setInterval(() => {
             fetchStats().catch((err) => console.error(err.stack));
             fetchLPPool()
-            fetchApyTvl()
+            // fetchApyTvl()
           }, 10000)
           return () => clearInterval(refreshInterval);
         }
@@ -188,42 +189,10 @@ const Info: React.FC = () => {
                                 <StyledInfoBoxNum>{(pool3)}</StyledInfoBoxNum>
                             </StyledOtherMsgSection>
                             <StyledOtherMsgSection>
-                                {/* <StyledInfoBoxP>SUVS in SUVS/HBTC Pool:</StyledInfoBoxP>
-                                <StyledInfoBoxNum> 0.000</StyledInfoBoxNum> */}
+                                <StyledInfoBoxP>SUVS in SUVS/BXS Pool:</StyledInfoBoxP>
+                                <StyledInfoBoxNum>{pool4}</StyledInfoBoxNum>
                             </StyledOtherMsgSection>
                         </StyledRightLi>
-                    </StyledOtherMsg>
-                    <StyledH2>Mdex Pool Metrics</StyledH2>
-                    <StyledOtherMsg>
-                        {
-                            arr.map((v, k) =>
-                            <StyledLeftLi1 key={k}>
-                                <StyledInfoBoxH3>{v.depositTokenName}</StyledInfoBoxH3>
-                                <StyledOtherMsgSection>
-                                    <StyledInfoBoxP>TVL:</StyledInfoBoxP>
-                                    <StyledInfoBoxNum>${commify(v.tvl)}</StyledInfoBoxNum>
-                                </StyledOtherMsgSection>
-                                <StyledOtherMsgSection>
-                                    <StyledInfoBoxP>Yield (D/Y)*:</StyledInfoBoxP>
-                                    {
-                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT-LP' ?
-                                        <StyledInfoBoxNum>{share ? (v.apy * Number(share?.priceInDAI) /365).toFixed(2) +'%/' + (v.apy * Number(share?.priceInDAI)).toFixed(2) + '%': '— %'}</StyledInfoBoxNum> :
-                                        <StyledInfoBoxNum>{cash ? (v.apy * Number(share?.priceInDAI) /365).toFixed(2) +'%/' + (v.apy * Number(cash?.priceInDAI)).toFixed(2) + '%': '— %'}</StyledInfoBoxNum>
-                                    }
-                                    {/* <StyledInfoBoxNum>{v.apy/365}% /{v.apy* Number(cash?.priceInDAI)}%</StyledInfoBoxNum> */}
-                                </StyledOtherMsgSection>
-                                <StyledOtherMsgSection>
-                                    <StyledInfoBoxP>Rewards Remaining:</StyledInfoBoxP>
-                                    {
-                                        v.depositTokenName.toUpperCase() === 'SUVC_USDT-LP' ||  v.depositTokenName.toUpperCase() === 'SUVS_USDT-LP' ?
-                                        <StyledInfoBoxNum>{v.remain} SUVS</StyledInfoBoxNum> :
-                                        <StyledInfoBoxNum>{v.remain} SUVC</StyledInfoBoxNum>
-                                    }
-                                    
-                                </StyledOtherMsgSection>
-                            </StyledLeftLi1>
-                            )
-                        }
                     </StyledOtherMsg>
                 </StyledInfoBox>
             </StyledInfo>

@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
   return (
     <StyledLogo>
       <img src={farmer} height="42" />
-      <StyledLink href="/">Darwin</StyledLink>
+      <StyledLink href="/">Darwin X</StyledLink>
     </StyledLogo>
   );
 };

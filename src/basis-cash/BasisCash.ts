@@ -10,6 +10,8 @@ import { getDefaultProvider } from '../utils/provider';
 import IUniswapV2PairABI from './IUniswapV2Pair.abi.json';
 import { value } from 'numeral';
 import BN from "bignumber.js"
+import axios from 'ts-axios-new'
+import { apiUrl } from './config';
 
 /**
  * An API module of Basis Cash contracts.
@@ -102,11 +104,13 @@ export class BasisCash {
    * It may differ from the BAC price used on Treasury (which is calculated in TWAP)
    */
   async getCashStatFromUniswap(): Promise<TokenStat> {
-    const supply = await this.BAC.displayedTotalSupply();
+    // const supply = await this.BAC.displayedTotalSupply();
     // console.log(supply)
+    const instance = axios.create();
+    const data = await instance.get(apiUrl + '/listTokenPrice/' + this.BAC.symbol)
     return {
-      priceInDAI: await this.getTokenPriceFromUniswap(this.BAC),
-      totalSupply: supply,
+      priceInDAI: data.data.data.price, //await this.getTokenPriceFromUniswap(this.BAC),
+      totalSupply: data.data.data.totalSupply //supply,
     };
   }
 
@@ -160,7 +164,6 @@ export class BasisCash {
   }
   async getCashPriceOne(): Promise<BigNumber> {
     const { Treasury } = this.contracts;
-
     return Treasury.cashPriceOne();
   }
 
@@ -172,17 +175,23 @@ export class BasisCash {
   async getBondStat(): Promise<TokenStat> {
     const decimals = BigNumber.from(10).pow(18);
     const cashPrice: BigNumber = await this.getBondOraclePriceInLastTWAP();
+    // console.log(cashPrice)
     const bondPrice = cashPrice.pow(2).div(decimals);
+    // console.log(getDisplayBalance(bondPrice))
+    const instance = axios.create();
+    const data = await instance.get(apiUrl + '/listTokenPrice/' + this.BAB.symbol)
     return {
       priceInDAI: getDisplayBalance(bondPrice),
-      totalSupply: await this.BAB.displayedTotalSupply(),
+      totalSupply: data.data.data.totalSupply  //await this.BAB.displayedTotalSupply(),
     };
   }
 
   async getShareStat(): Promise<TokenStat> {
+    const instance = axios.create();
+    const data = await instance.get(apiUrl + '/listTokenPrice/' + this.BAS.symbol)
     return {
-      priceInDAI: await this.getTokenPriceFromUniswap(this.BAS),
-      totalSupply: await this.BAS.displayedTotalSupply(),
+      priceInDAI: data.data.data.price, //await this.getTokenPriceFromUniswap(this.BAS),
+      totalSupply: data.data.data.totalSupply // await this.BAS.displayedTotalSupply(),
     };
   }
 
@@ -202,6 +211,7 @@ export class BasisCash {
       console.error(`Failed to fetch token price of ${tokenContract.symbol}: ${err}`);
     }
   }
+  
 
   /**
    * Buy bonds with cash.

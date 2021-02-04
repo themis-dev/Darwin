@@ -125,11 +125,12 @@ const BankCard: React.FC<BankCardProps> = ({ bank, cash, share }) => {
                 </StyledTotalItem>
                 <StyledTotalItem>
                   <StyledAPY>APY</StyledAPY>
-                  {
+                  <StyledAPY>{(bank.totalNum?.apy)}%</StyledAPY>
+                  {/* {
                     bank.depositTokenName.toUpperCase() === 'BXC_USDT-LP' ||  bank.depositTokenName.toUpperCase() === 'BXS_USDT-LP' ?
                     <StyledAPY>{share ? (bank.totalNum?.apy * share?.priceInDAI).toFixed(2) + '%': '— %'}</StyledAPY> :
                     <StyledAPY>{cash ? (bank.totalNum?.apy * cash?.priceInDAI).toFixed(2) + '%': '— %'}</StyledAPY>
-                  }
+                  } */}
                 </StyledTotalItem>
               </StyledTotalContent>
             </StyledTotal>

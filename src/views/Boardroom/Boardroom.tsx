@@ -70,7 +70,7 @@ const Boardroom: React.FC = () => {
         basisCash.getCashStatFromUniswap(),
         basisCash.getShareStat(),
         ]);
-        const data = await instance.get(apiUrl + '/bxc/num')
+        const data = await instance.get(apiUrl + '/num')
         const bxsStaked = data.data.data[1].boardroom
         // console.log(cash)
         // console.log(share)

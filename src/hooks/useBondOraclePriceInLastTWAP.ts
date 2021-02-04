@@ -9,9 +9,6 @@ const useBondOraclePriceInLastTWAP = () => {
   
 
   const fetchCashPrice = useCallback(async () => {
-    // console.log('asdasds')
-    // const dd = await basisCash.getBondOraclePriceInLastTWAP()
-    // console.log(dd)
     setPrice(await basisCash.getBondOraclePriceInLastTWAP());
   }, [basisCash]);
 

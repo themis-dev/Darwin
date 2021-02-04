@@ -31,8 +31,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title, titleA, 
       <StyledSubtitle>{subtitle1}</StyledSubtitle>
       {titleA &&
        <div>
-         <StyledLink2 href="https://ht.mdex.com/#/swap?outputCurrency=0x15F4c382926F8A083bC924AbD3aa84Ce3982CAa9&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a" target="_blank">{titleA} </StyledLink2> 
-         <StyledLink2 href="https://ht.mdex.com/#/swap?outputCurrency=0xbe0e001A5553f4421DC250A20bBdAb0e735495e3&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a" target="_blank">{titleB} </StyledLink2> 
+         <StyledLink2 href="https://ht.mdex.com/#/swap?outputCurrency=0xE26A6f565a0974f9210E659594C716f6B021909F&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a" target="_blank">{titleA} </StyledLink2> 
+         <StyledLink2 href="https://ht.mdex.com/#/swap?outputCurrency=0x53f6B18f5bDC47bF5c17285277A67453D41f6806&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a" target="_blank">{titleB} </StyledLink2> 
        </div>
        }
       {/* <StyledSubtitle>{subtitle}</StyledSubtitle> */}

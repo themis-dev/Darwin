@@ -30,15 +30,11 @@ const Banks: React.FC = ({ children }) => {
           continue;
         }
       }
-      // data.data.data.map((v: { depositTokenName: string; tvl: any; apy: any; }) => {
-        // if(v.depositTokenName === bankInfo.depositTokenName) {
-        //   const obj = {
-        //     tvl: v.tvl,
-        //     apy: v.apy
-        //   }
+      data.data.data.map((v: { contractName: string; tvl: any; apy: any; }) => {
+        if(v.contractName === bankInfo.contract) {
           const obj = {
-            tvl: 0,
-            apy:0
+            tvl: v.tvl,
+            apy: v.apy
           }
           banks.push({
             ...bankInfo,
@@ -47,11 +43,11 @@ const Banks: React.FC = ({ children }) => {
             earnToken: bankInfo.earnTokenName == 'SUVC' ? basisCash.BAC : basisCash.BAS,
             totalNum: obj,
           });
-        // }
-      // })
+        }
+      })
       
     }
-    console.log(banks)
+    // console.log(banks)
     banks.sort((a, b) => (a.sort > b.sort ? 1 : -1));
     setBanks(banks);
   }, [basisCash, basisCash?.isUnlocked, setBanks]);

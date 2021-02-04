@@ -20,6 +20,7 @@ import { getDisplayBalance } from '../../utils/formatBalance';
 import { BOND_REDEEM_PRICE, BOND_REDEEM_PRICE_BN } from '../../basis-cash/constants';
 import bonds from '../../assets/img/bonds.png'
 import { useAddPopup } from '../../state/application/hooks';
+import { validateLocaleAndSetLanguage } from 'typescript';
 
 
 const Bond: React.FC = () => {
@@ -56,10 +57,8 @@ const Bond: React.FC = () => {
     [basisCash, addTransaction],
   );
   const isBondRedeemable = useMemo(() => cashPrice.gt(BOND_REDEEM_PRICE_BN), [cashPrice]);
-  const isBondPurchasable = useMemo(() => Number(bondStat?.priceInDAI) < 0.95, [bondStat]);
-
-  // console.log(isBondPurchasable)
-
+  const isBondPurchasable = useMemo(() => Number(bondStat?.priceInDAI) < 0.9025, [bondStat]);
+  
   const isLaunched = Date.now() >= config.bondLaunchesAt.getTime();
   if (!isLaunched) {
     return (
@@ -107,7 +106,7 @@ const Bond: React.FC = () => {
                         )}% return when SUVC > $0.95`
                   }
                   onExchange={handleBuyBonds}
-                  disabled={!isBondPurchasable || !bondStat || isBondRedeemable}
+                  disabled={ !isBondPurchasable || !bondStat || isBondRedeemable}
                 />
               </StyledCardWrapper>
               <StyledStatsWrapper>

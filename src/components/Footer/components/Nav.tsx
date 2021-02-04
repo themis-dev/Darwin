@@ -4,12 +4,12 @@ import styled from 'styled-components'
 const Nav: React.FC = () => {
   return (
     <StyledNav>
-      <StyledLink href= {buyBAS} target="_blank">Get BXS</StyledLink>
-      <StyledLink href= {buyBAC} target="_blank">Get BXC</StyledLink>
-      <StyledLink href="https://docs.basisx.io" target="_blank">Docs</StyledLink>
-      <StyledLink href="https://github.com/basisx-io/contracts/blob/main/README.md" target="_blank">GitHub</StyledLink>
+      <StyledLink href= {buyBAS} target="_blank">Get SUVS</StyledLink>
+      <StyledLink href= {buyBAC} target="_blank">Get SUVC</StyledLink>
+      {/* <StyledLink href="https://docs.basisx.io" target="_blank">Docs</StyledLink> */}
+      {/* <StyledLink href="https://github.com/basisx-io/contracts/blob/main/README.md" target="_blank">GitHub</StyledLink> */}
       <StyledLink href="https://twitter.com/darwinx_io" target="_blank">Twitter</StyledLink>
-      <StyledLink href="https://t.me/BasisxOfficial" target="_blank">Telegram</StyledLink>
+      {/* <StyledLink href="https://t.me/BasisxOfficial" target="_blank">Telegram</StyledLink> */}
       {/* <StyledLink href="https://discord.gg/UEZq3HF5Eu" target="_blank">Discord</StyledLink> */}
       <StyledLink href="https://medium.com/@darwinx_io" target="_blank">Medium</StyledLink>
       {/* <StyledLink href="https://github.com/basisx-io/contracts/blob/main/REP-BasisX-16_01_2021.pdf" target="_blank">Audit</StyledLink> */}
@@ -40,6 +40,6 @@ const StyledLink = styled.a`
     font-size: 10px
   }
 `
-const buyBAS ="https://ht.mdex.com/#/swap?outputCurrency=0xbe0e001A5553f4421DC250A20bBdAb0e735495e3&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a";
-const buyBAC= "https://ht.mdex.com/#/swap?outputCurrency=0x15F4c382926F8A083bC924AbD3aa84Ce3982CAa9&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a"
+const buyBAS ="https://ht.mdex.com/#/swap?outputCurrency=0x53f6B18f5bDC47bF5c17285277A67453D41f6806&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a";
+const buyBAC= "https://ht.mdex.com/#/swap?outputCurrency=0xE26A6f565a0974f9210E659594C716f6B021909F&inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a"
 export default Nav

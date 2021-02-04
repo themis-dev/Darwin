@@ -7,7 +7,7 @@ const useHarvestFromBoardroom = () => {
   const handleTransactionReceipt = useHandleTransactionReceipt();
 
   const handleReward = useCallback(() => {
-    handleTransactionReceipt(basisCash.harvestCashFromBoardroom(), 'Claim BXC from Boardroom');
+    handleTransactionReceipt(basisCash.harvestCashFromBoardroom(), 'Claim SUVC from Boardroom');
   }, [basisCash]);
 
   return { onReward: handleReward };
